@@ -216,55 +216,6 @@ flowchart TD
 
 ---
 
-## 9. Development Roadmap
-
-The planned progression for the 30-day initial build:
-
-- [x] **Phase 1: Foundation & Domain Modeling (Days 1–5)**
-  - Initialize project with `uv` and clean `src` layout.
-  - Implement core domain models: `Session`, `Project`, and `Task`.
-  - Distinguish `INTERRUPTED` from `FAILED` session states.
-  - Implement pure dependency-aware `Task Planner`.
-- [ ] **Phase 2: Task Graph Validation & Persistence Foundation (Days 6–10)**
-  - Cycle detection and acyclic graph validation in task definitions.
-  - SQLite database schema and SQLAlchemy ORM models.
-  - Domain repositories for Project, Task, and Session persistence.
-- [ ] **Phase 3: Control Plane API (Days 11–15)**
-  - FastAPI application routing and Pydantic request/response schemas.
-  - CRUD endpoints for Projects, Tasks, and Sessions.
-  - Read-only endpoints for queryable ready task queues.
-- [ ] **Phase 4: Git Workspace Isolation (Days 16–20)**
-  - Git worktree manager service.
-  - Automatic branch creation, worktree attachment, and post-session cleanup.
-  - Safe error handling for dirty working trees.
-- [ ] **Phase 5: Agent Adapters & Process Execution (Days 21–25)**
-  - Subprocess adapter interface for CLI-based AI agents.
-  - Async stdout/stderr streaming and execution logging.
-  - Session lifecycle management (transitioning states through `STARTING`, `RUNNING`, `SUCCEEDED`, `FAILED`).
-- [ ] **Phase 6: Multi-Agent Orchestration & Failure Recovery (Days 26–28)**
-  - Concurrency-bounded task scheduler.
-  - Independent Retry Manager with backoff policies.
-  - Startup recovery routine to reconcile interrupted agent processes.
-- [ ] **Phase 7: GitHub Integration, Audit Events & Demonstration (Days 29–30)**
-  - Event bus for audit logs and lifecycle events.
-  - Git commit and pull request preparation.
-  - End-to-end multi-agent demonstration on a sample multi-task objective.
-
-*(Note: Roadmap reflects current planning targets and will adapt as implementation challenges arise.)*
-
----
-
-## 10. Engineering Documentation & ADRs
-
-For deep insights into the implementation history, engineering hurdles, and architectural decisions:
-
-- **[Engineering Log](docs/ENGINEERING_LOG.md):** Daily engineering logs covering technical concepts, encountered problems, root-cause analyses, and key takeaways.
-- **[Architecture Decision Records](docs/adr/):**
-  - [ADR-001: Separation of Project, Task, and Session](docs/adr/0001-separation-of-project-task-and-session.md)
-  - [ADR-002: Separation of Task Planning and Retry Management](docs/adr/0002-separation-of-task-planning-and-retry-management.md)
-
----
-
 ## 11. License
 
 Licensing terms for this project are currently pending. No open-source license has been formally applied to this repository yet. All rights reserved.
