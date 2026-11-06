@@ -142,25 +142,7 @@ flowchart TD
 
 ---
 
-## 6. Current Implementation Status
-
-| Component | Status | Details |
-|---|---|---|
-| **Python Project Foundation** | Implemented | Python `>=3.14` package setup using `uv`, deterministic lockfile (`uv.lock`), `src` layout. |
-| **Session Domain Model** | Implemented | Dataclass with UUID identity, UTC timestamps, and `SessionStatus` lifecycle enum (distinguishing `FAILED` from `INTERRUPTED`). |
-| **Project Domain Model** | Implemented | Dataclass with UUID identity, UTC timestamps, and `pathlib.Path` repository path. |
-| **Task Domain Model** | Implemented | Dataclass with UUID identity, `TaskStatus` lifecycle enum, and immutable `tuple` dependencies. |
-| **Task Planner** | Implemented | `find_ready_tasks()` pure function providing dependency-aware eligibility resolution. |
-| **FastAPI Service & Endpoints** | Planned | FastAPI, Uvicorn, and Pydantic Settings installed as dependencies; REST endpoints not yet implemented. |
-| **Database Persistence** | Planned | Storage abstraction and SQLite / SQLAlchemy integration not yet implemented. |
-| **Git Worktree Manager** | Planned | Branch creation, worktree provisioning, and cleanup not yet implemented. |
-| **Agent Adapters** | Planned | Subprocess harnesses for external coding agent CLIs not yet implemented. |
-| **Retry Manager** | Planned | Failure evaluation and retry policies not yet implemented (decoupled from Task Planner). |
-| **Multi-Agent Execution Engine** | Planned | Concurrency scheduling, process supervisor, and event dispatch not yet implemented. |
-
----
-
-## 7. Technology Stack
+## 6. Technology Stack
 
 ### Installed & Configured
 
@@ -180,7 +162,7 @@ flowchart TD
 
 ---
 
-## 8. Local Setup
+## 7. Local Setup
 
 ### Prerequisites
 
@@ -216,6 +198,6 @@ flowchart TD
 
 ---
 
-## 11. License
+## 8. License
 
 Licensing terms for this project are currently pending. No open-source license has been formally applied to this repository yet. All rights reserved.
