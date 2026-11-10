@@ -19,3 +19,8 @@ class TaskStatus(str, Enum):
     COMPLETED = "completed"
     FAILED = "failed"
     CANCELLED = "cancelled"
+
+class TaskPriority(str, Enum):
+    HIGH = "high"
+    NORMAL = "normal"
+    LOW = "low"

@@ -4,6 +4,7 @@ from uuid import uuid4
 
 from conductor.domain.enums import TaskStatus
 
+from conductor.domain.enums import TaskStatus, TaskPriority
 
 @dataclass
 class Task:
@@ -19,3 +20,5 @@ class Task:
     created_at: datetime = field(
         default_factory=lambda: datetime.now(timezone.utc)
     )
+
+    priority: TaskPriority = TaskPriority.NORMAL
