@@ -6,6 +6,7 @@ from conductor.domain.enums import TaskStatus
 
 from conductor.domain.enums import TaskStatus, TaskPriority
 
+
 @dataclass
 class Task:
     project_id: str
@@ -22,3 +23,5 @@ class Task:
     )
 
     priority: TaskPriority = TaskPriority.NORMAL
+
+    ready_since: datetime | None = None

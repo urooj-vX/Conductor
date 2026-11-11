@@ -1,5 +1,6 @@
 from conductor.domain.enums import TaskPriority
 from conductor.domain.task import Task
+from conductor.services.priority_policy import effective_priority
 
 
 PRIORITY_ORDER = {
@@ -20,7 +21,7 @@ def select_tasks(
     ordered_tasks = sorted(
         ready_tasks,
         key=lambda task: (
-            PRIORITY_ORDER[task.priority],
+            effective_priority(task),
             task.created_at,
             task.id,
         ),
